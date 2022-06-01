@@ -1,5 +1,25 @@
 # Getting Started with Create React App
 
+
+
+Redux Gif - https://thumbs.gfycat.com/LividMediocreAmericanpainthorse-size_restricted.gif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

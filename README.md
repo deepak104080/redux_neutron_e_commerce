@@ -4,9 +4,9 @@
 
 Redux Gif - https://thumbs.gfycat.com/LividMediocreAmericanpainthorse-size_restricted.gif
 
+API - https://fakestoreapi.com/docs
 
-
-
+Redux Extension - https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en
 
 
 

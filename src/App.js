@@ -23,3 +23,18 @@ function App() {
 }
 
 export default App;
+
+
+
+// JS
+// REACT
+// ANGULAR
+
+
+// redux
+// react-redux
+
+
+
+// bootstrap
+// react-bootstrap

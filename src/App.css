@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+/* Custom CSS */
+.product-item {
+  border: 1px solid #282c34;
+}

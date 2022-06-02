@@ -13,6 +13,18 @@ Redux Extension - https://chrome.google.com/webstore/detail/redux-devtools/lmhkp
 
 
 
+<!-- productList
+
+
+call action  - productAction (ActionTypes - constant)
+dispatch (action - type, payload)
+
+reducer - (ActionTypes - constant)
+(index) - Store (index.js - Provider)
+
+
+useSelector to fetch data -->
+
 
 
 

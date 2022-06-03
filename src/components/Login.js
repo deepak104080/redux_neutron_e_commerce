@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {loginUser} from '../redux/actions/loginAction';
@@ -6,6 +6,9 @@ import {loginUser} from '../redux/actions/loginAction';
 const Login = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    const inputRef1 = useRef();
+    const inputRef2 = useRef();
 
     const loginData = useSelector((state) => state.login);
 
@@ -17,11 +20,17 @@ const Login = () => {
 
     const loginFn = () => {
         // take two input values
+        let username = inputRef1.current.value;
+        let password = inputRef2.current.value;
+        console.log('useername and password', username, password);
+
         // call api with username and password
         // if successfull, call dispatch
+        if(username === 'deepak123' && password === '123456') {
+            dispatch(loginUser('newtonschool'));
+        }
         // else
         // show error
-        dispatch(loginUser('newtonschool'));
     }
     return(
         <>
@@ -32,8 +41,8 @@ const Login = () => {
         </div>
         <div className="row bg-info bg-opacity-50">
             <div className="col-12">
-                Username: <input type="text" name="username" />
-                Password: <input type="password" name="password"/>
+                Username: <input type="text" ref={inputRef1} name="username" value={'deepak123'}/>
+                Password: <input type="password" ref={inputRef2} name="password" value={'123456'}/>
                 <button onClick={loginFn}>Login</button>
             </div>
         </div>

@@ -1,11 +1,11 @@
 import { actionTypes } from "../constants/actionTypes";
 
-export const selectedProductReducer = (state = {}, action) => {
+export const cartReducer = (state = {}, action) => {
     const {type, payload} = action;
     switch(type) {
-        case actionTypes.SET_SELECTED_PRODUCT:
+        case actionTypes.ADDTOCART :
             return {...state, ...payload}
         default:
-            return state;
+            return state
     }
 }

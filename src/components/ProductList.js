@@ -7,16 +7,18 @@ const ProductList = () => {
     // const [data, setData] = useState([]);
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    
     const tempData = useSelector((state) => state.allProducts.products);
-
-
-    const loginData = useSelector((state) => state.login);
-    console.log('----login data from selector -----', loginData);
-    if(!loginData.loginStatus) {
-        navigate('/');
-    }
-
     console.log('data from redux - ', tempData);
+
+
+    // const loginData = useSelector((state) => state.login);
+    // console.log('----login data from selector -----', loginData);
+    // if(!loginData.loginStatus) {
+    //     navigate('/');
+    // }
+
+    
 
     const fetchProductsList = () => {
         fetch('https://fakestoreapi.com/products')

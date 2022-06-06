@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import {useSelector} from 'react-redux';
-import {useNavigate} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 const Cart = () => {
     const navigate = useNavigate();
@@ -19,7 +19,7 @@ const Cart = () => {
         //navigate to orders page
     }
 
-    const cartData = useSelector((state) => state.cart);
+    const cartData = useSelector((state) => state.cart.products);
     console.log('-----------cart data--------------', cartData);
     
     return(
@@ -41,21 +41,29 @@ const Cart = () => {
                         <th>Quantity</th>
                         <th>Cost</th>
                     </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>{cartData.title}</td>
-                        <td><img src={cartData.image} className="img-fluid img-thumbnail"/></td>
-                        <td>{cartData.price}</td>
-                        <td>1</td>
-                        <td>{cartData.price}</td>
-                    </tr>
+                    {
+                        cartData.map((item) => (
+                            <tr>
+                                <td>1</td>
+                                <td>{item.title}</td>
+                                <td><img src={item.image} style={{'max-width': 100}} className="img-fluid"/></td>
+                                <td>{item.price}</td>
+                                <td>1</td>
+                                <td>{item.price}</td>
+                            </tr>
+                        ))
+                    }
+                    
                 </table>
             </div>
         </div>
 
-        <div className="row bg-info bg-opacity-50">
-            <div className="col-12 text-center">
+        <div className="row bg-info bg-opacity-10">
+            <div className="col-6 text-center">
                 <button className="btn btn-success" onClick={placeOrder}>Place Order</button>
+            </div>
+            <div className="col-6 text-center">
+                <Link to="/productlist" className="btn btn-primary" onClick={placeOrder}>Continue Shopping</Link>
             </div>
         </div>
         </>

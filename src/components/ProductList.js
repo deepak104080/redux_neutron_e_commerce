@@ -24,7 +24,7 @@ const ProductList = () => {
         fetch('https://fakestoreapi.com/products')
         .then(data => data.json())
         .then(response => {
-            console.log(response);
+            // console.log(response);
             // setData(response);
             // trigger action with data - type and payload;
             dispatch(setProducts(response));

@@ -1,10 +1,15 @@
 import { actionTypes } from "../constants/actionTypes";
 
-export const cartReducer = (state = {}, action) => {
+const tempState = {
+    products: []
+}
+export const cartReducer = (state = tempState, action) => {
     const {type, payload} = action;
     switch(type) {
         case actionTypes.ADDTOCART :
-            return {...state, ...payload}
+            console.log('state', state);
+            let temp = [...state.products, payload];
+            return {...state, products: temp}
         default:
             return state
     }

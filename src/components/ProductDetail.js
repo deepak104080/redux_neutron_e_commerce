@@ -13,16 +13,21 @@ const ProductDetail = () => {
     let tempProduct = {};
 
     tempProduct = useSelector((state) => state.selectedProduct);
-    console.log('---data from selected product store - ', tempProduct);
+    //console.log('---data from selected product store - ', tempProduct);
 
     const loginData = useSelector((state) => state.login);
     //console.log('----login data from selector -----', loginData);
     const cartData = useSelector((state) => state.cart);
+    // console.log('----login data from selector for cart -----', cartData);
+
+    const tempData = useSelector((state) => state);
+    console.log('----login data from selector -----', tempData);
+
 
     const fetchProductDetail = async () => {
         const url = 'https://fakestoreapi.com/products/'+id;
         const response = await axios.get(url);
-        console.log('----response data in product detail api call ----', response.data);
+        // console.log('----response data in product detail api call ----', response.data);
         dispatch(setSelectedProduct(response.data));
     }
 
@@ -56,7 +61,7 @@ const ProductDetail = () => {
                     loginData.loginStatus && (
                         <>
                         {
-                            cartData.id === tempProduct.id ? 
+                            cartData.products.map((temp) => temp.id).indexOf(tempProduct.id) !== -1  ? 
                             (<Link to='/cart'>Go to Cart</Link>) : 
                             (<button onClick={addCart}>Add to Cart</button>)
                         }

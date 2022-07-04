@@ -25,7 +25,7 @@ const ProductDetail = () => {
 
 
     const fetchProductDetail = async () => {
-        const url = 'https://fakestoreapi.com/products/'+id;
+        const url = 'http://localhost:4000/products/'+id;
         const response = await axios.get(url);
         // console.log('----response data in product detail api call ----', response.data);
         dispatch(setSelectedProduct(response.data));
